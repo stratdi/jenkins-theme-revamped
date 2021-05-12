@@ -1,0 +1,813 @@
+:root, light {
+  --uib-color: #347fd4;
+  --nav-color: #347fd4;
+  --nav-light-color: #a6cfff;
+  --nav-superlight-color: #dee7f3;
+  --nav-weight: 240px;
+  --nav-weigth-inverse: -240px;
+  --nav-img: url(img/menu.png);
+  --header-color: white;
+  --header-color-alt: white;
+  --main-color: #f4f5fa;
+  --panel-color: white;
+  --link-color: var(--uib-color);
+  --text-color: black;
+  --red-color: #FC4631;
+  --green-color: #C3E680;
+  --yellow-color: #FFCA59;
+  --disabled-color: #C490DA;
+  --dark-red-color: rgb(179, 41, 26);
+  --dark-green-color: rgb(134, 190, 30);
+  --dark-yellow-color: rgb(182, 131, 21);
+
+  --new-color: #51E3C2;
+  --input-border-color: lightgray;
+
+  --scrollbar-color: #c6c9d4;
+  --scrollbar-size: 6px;
+
+  --logo-url: url(jenkins.png);
+
+  --box-shadow: 0 2px 30px 2px rgb(0 0 0 / 10%) !important;
+}
+
+.dark {
+  --uib-color: #0063A8;
+  --nav-color: #1f2a40;
+  --nav-light-color: #0063A8;
+  --nav-superlight-color: #0063A8;
+  --nav-img: url(img/menualt.png);
+  --header-color: rgb(1, 80, 136);
+  --header-color-alt: #1f2a40;
+  --main-color: #141b2d;
+  --panel-color: var(--header-color-alt);
+  --text-color: white;
+  --logo-url: url(jenkinsalt.png);
+  --link-color: var(--text-color);
+  --input-border-color: #347fd4;
+
+  --box-shadow: 0 2px 30px 2px rgb(255 255 255 / 10%) !important;
+}
+
+/* Config general */
+html {
+  overflow: hidden;
+}
+a.model-link {
+  color: var(--link-color) !important;
+}
+a:link {
+  color: var(--link-color);
+}
+.setting-input {
+  border-radius: 0px !important;
+  box-shadow: none !important;
+}
+
+#side-panel {
+  height: calc(100vh - 56px);
+  overflow-y:hidden;
+  padding-right: 6px;
+}
+#side-panel:hover {
+  overflow-y:scroll;
+  padding-right: 0px;
+}
+#side-panel .task-link-wrapper a:hover {
+  background-color:var(--nav-light-color);
+}
+#side-panel .task-link--active {
+  background-color: var(--nav-light-color);
+}
+#side-panel .task-link--active:before {
+  border-left: 0px;
+}
+#main-panel {
+  height: calc(100vh - 115px);
+  overflow:scroll;
+}
+footer {
+  position: absolute;
+  bottom:0px;
+  margin-left:0px !important;
+  width: calc(100% - var(--nav-weight));
+  height: 30px;
+  background-color: var(--main-color) !important;
+  display: none; /* per CTI eliminar */
+}
+.page-footer .container-fluid {
+  background-color: var(--header-color-alt);
+}
+
+footer * {
+  height: 30px;
+  min-height: 0px;
+  line-height: 30px;
+}
+/* Capรงalera */
+#header {
+  background:var(--header-color);
+  box-shadow: var(--box-shadow);
+  position:relative;
+  z-index: 9999 !important;
+
+  margin-left:var(--nav-weigth-inverse);
+}
+
+#jenkins-head-icon {
+  display: none;
+}
+
+#jenkins-name-icon {
+  width: 240px;
+  height: 36px;
+  background-image: var(--logo-url);
+  background-size: 200px;
+  background-repeat: no-repeat;
+  padding-left: 240px;
+
+  margin: 0px !important;
+
+
+
+ /* background-image: url(jenkins.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 1px solid #000;*/
+}
+
+/* Afegit menu */
+div#nav-button img {
+    width: 30px;
+    height: 30px;
+    margin-left: 23px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+#header .svg-icon {
+  display:none;
+}
+#header span {
+  color: var(--text-color);
+}
+#page-head {
+  margin-left: var(--nav-weight);
+}
+#header .logo {
+  margin-left: 0px;
+}
+.page-header__brand {
+  display: block;
+}
+.page-header__hyperlinks {
+  justify-content: flex-end;
+}
+.searchbox.hidden-xs {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#search-box.main-search__input {
+  padding: 5px 10px 5px 10px;
+  border:2px solid var(--input-border-color);
+  border-radius:30px;
+  width: 500px;
+}
+
+.breadcrumbs__wrapper {
+  transition:margin-left 0.3s ease-in-out;
+  background-color: var(--header-color-alt) !important;
+}
+
+.breadcrumbs__wrapper a {
+  color: var(--text-color) !important;
+}
+
+/* Barra lateral */
+#side-panel {
+  box-shadow: var(--box-shadow);
+  border:0px;
+
+  width: var(--nav-weight) !important;
+  z-index: 999999;
+
+  /*margin-top: -96px !important;*/
+  margin-top: -40px !important;
+  padding-top: 0px;
+  padding-left: var(--scrollbar-size);
+  
+  /*background-image: url('https://einesdes.uib.es/jenkins/userContent/jenkins-theme-revamped/img/jenkins_barra.png');
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-position-y: 10px;
+  */
+  background-color:var(--nav-color);
+
+  transition:width 0.3s ease-in-out;
+}
+.panel-compressed {
+  width: 20px !important;
+}
+.task-link-text {
+    font-size: 12px !important;
+    color: white;
+}
+.task a {
+  font-size: 12px !important;
+  color: white !important;
+}
+
+/* Contingut */
+#page-body {
+  background-color:var(--main-color);
+}
+#main-panel {
+  margin:10px;
+  background-color: var(--panel-color);
+  box-shadow: var(--box-shadow);
+  border-radius:0px;
+  overflow-y:auto;
+}
+.dashboard table {
+  /*table-layout: fixed;*/
+}
+
+/* Footer */
+#htmlAudioNotifierPanel {
+  margin:0;
+}
+
+/* Scrollbar */
+*::-webkit-scrollbar {
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);
+  border-radius: 6px;
+  border-right: 0px;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-color) #66000000;
+}
+
+/* Taules */
+table {
+  /*table-layout: fixed;*/
+}
+.col-md-offset-2.col-md-20 {
+  display: table;
+  margin: 0;
+  width: 100%;
+}
+table#projectstatus {
+  box-shadow: var(--box-shadow);
+}
+table *{
+  font-size:12px;
+}
+
+table tr td {
+  border: 0px !important;
+}
+
+.dashboard td, .dashboard td a {
+  color: var(--text-color) !important;
+  text-decoration: none !important;
+}
+
+table.stripped tr:hover, table.stripped-even tr:hover, table.stripped-odd tr:hover, table.stripped-odd tr:nth-child(odd):hover, tr:hover td[tooltip^="Percentage"] {  
+  background: var(--nav-superlight-color) !important;
+}
+
+table tbody:not([class="header"]) {
+  background-color: var(--panel-color);
+}
+table.stripped-odd tr:nth-child(odd) {
+  background-color: var(--panel-color);
+}
+
+.tabBar .tab a{
+    border-radius: 0px;
+    border:0px solid black !important;
+    color: var(--text-color);
+}
+.tabBar .tab a:hover {
+  background-color: var(--nav-superlight-color);
+  color: var(--text-color);
+}
+.tabBar .tab.active a {
+  background-color: var(--uib-color) !important;
+}
+
+.bigtable .pane-header, .bigtable th {
+  background-color: var(--uib-color);
+  border:0px !important;
+}
+
+/* Line coverage */
+td[tooltip^="Percentage"] {
+	background-color:var(--panel-color) !important;
+}
+td[tooltip^="Percentage"] a {
+  color:var(--text-color) !important;
+}
+
+/* Build Queue */
+#side-panel .pane-frame {
+  border: 0px;
+  box-shadow: var(--box-shadow);
+}
+#buildQueue .col-xs-24.pane-header, #executors .col-xs-24.pane-header, #buildHistory .col-xs-24.pane-header{
+  font-size:12px;
+  background: var(--nav-light-color) !important;
+  box-shadow: var(--box-shadow);
+}
+#side-panel table.stripped tr:nth-of-type(even) {
+  background-color: var(--panel-color);
+}
+#side-panel .pane-header, #side-panel .pane-footer {
+  background-color: var(--nav-superlight-color);
+}
+#executors table.pane {
+  overflow-x: scroll;
+}
+
+/* Icons */
+#side-panel .task img {
+  background-size: 24px;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+.dashboard img.icon-S {
+  width: 16px;
+  height: 16px;
+  background-size: 16px;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+.dashboard img.icon-M {
+  width: 24px;
+  height: 24px;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+.dashboard img.icon-L {
+  width: 32px;
+  height: 32px;
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding-left: 32px;
+}
+.icon-new-package, .yuimenuitemlabel[href$="newJob"] img{
+  background-image:url(img/plus.png);
+}
+.icon-user, .yuimenuitemlabel[href$="asynchPeople/"] img{
+  background-image:url(img/people.png);
+}
+a[href$="all/builds"] img, a[href$="/builds"] img {
+  background-image:url(img/clock.png);
+}
+.icon-gear2, .yuimenuitemlabel[href$="manage"] img, a[href$="configure"] img {
+  background-image:url(img/gear.png);
+}
+a[href$="newView"] img {
+  background-image:url(img/eye.png);
+}
+a[href$="/lockable-resources"] img {
+  background-image:url(img/usb.png);
+}
+a[href$="/me/my-views"] img {
+  background-image: url(img/eye.png);
+}
+.icon-up {
+  background-image:url(img/arrow-left.png);
+}
+.icon-search {
+  background-image:url(img/info.png);
+}
+.icon-folder {
+  background-image:url(img/folder.svg);
+}
+.icon-clock {
+  background-size: 16px;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+  background-image:url(img/play.png);
+}
+img[src$="terminal.png"] {
+  background-size: 16px;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+  background-image:url(img/console.png);
+}
+img[src$="waves_48x48.png"] {
+  background-size: 16px;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+  background-image:url(img/sonarqube.png);
+}
+#side-panel .icon-clock {
+  background-image:url(img/playnav.png);
+}
+.icon-edit-delete {
+  background-image:url(img/delete.png);
+}
+.icon-item-move-folder {
+  background-image:url(img/move.svg);
+}
+.icon-collapse {
+  background-image: var(--hide-icon);
+}
+.icon-expand {
+  background-image: var(--show-icon);
+}
+.icon-health-80plus {
+  background-image:url(img/sun.svg);
+}
+.icon-stop {
+  background-size: 16px;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+  background-image:url(img/close.png);
+}
+a[href$="rename"] img {
+  background-image:url(img/edit.png);
+}
+a[href$="disk-usage"] img {
+  background-image:url(img/hard-disk.png);
+}
+a[href$="fingerprintCheck"] img {
+  background-image:url(img/file.png);
+}
+a[href$="selenium"] img {
+  background-image:url(img/test.png);
+}
+a[href$="blue/organizations/jenkins"] img, img[src$="blueocean.png"] {
+  background-image:url(img/water.png);
+}
+.icon-credentials-credentials {
+  background-image:url(img/key.svg);
+}
+.icon-rss, .build-rss-all-icon img, .build-rss-failed-icon img {
+  background-image:url(img/rss.svg);
+}
+.icon-workflow-stage {
+  background-image:url(img/fullscreen.png);
+}
+.icon-notepad {
+  background-image:url(img/notepad.png);
+}
+a[href$="changes"] img {
+  background-image:url(img/notepad.png);
+}
+a[href$="badge"] img {
+  background-image:url(img/code.png);
+}
+a[href$="pipeline-syntax"] img {
+  background-image:url(img/fosset.png);
+}
+a[href$="jacoco"] img {
+  background-image:url(img/donat.png);
+}
+.icon-next {
+  background-image:url(img/next.png);
+}
+
+img[src$="blue.png"] {
+  background-size: 16px;
+  background-repeat: no-repeat;
+  padding-left: 32px;
+  background-image:url(img/success.png);
+}
+.build-caption img[src$="blue.png"], .build-caption img[src$="yellow.png"], .build-caption img[src$="red.png"], .build-caption img[src$="nobuilt.png"] {
+  background-size: 40px;
+  padding-left: 48px;
+}
+img[src$="yellow.png"] {
+  background-size: 16px;
+  background-repeat: no-repeat;
+  padding-left: 32px;
+  background-image:url(img/warning.png);
+}
+img[src$="red.png"] {
+  background-size: 16px;
+  background-repeat: no-repeat;
+  padding-left: 32px;
+  background-image:url(img/error.png);
+}
+img[src$="nobuilt.png"] {
+  background-size: 16px;
+  background-repeat: no-repeat;
+  padding-left: 32px;
+  background-image:url(img/new.png);
+}
+img[src$="pipelinemultibranchproject.png"] {
+  background-size: 16px;
+  background-repeat: no-repeat;
+  padding-left: 32px;
+  background-image:url(img/folder.png);
+}
+img[src$="computer.png"] {
+  background-size: 16px;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+  background-image:url(img/server.png);
+}
+img[src$="blue_anime.gif"] {
+  background-size: 16px;
+  background-repeat: no-repeat;
+  padding-left: 32px;
+  background-image:url(img/circle.png);
+  animation: rotation 2s infinite linear;
+}
+.status_success, .status_unstable, .status_failed {
+  margin-right: 9px;
+}
+.status_success img, .status_unstable img, .status_failed img {
+  padding-left: 20px;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+/* The slider */
+div#switch {
+  margin-right: 10px;
+  width: 35px;
+  height: 35px;
+  border-radius: 20px;
+  background: var(--nav-color) url(img/contrast.png);
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor:pointer;
+}
+/* END of theme switcher */
+
+div#nav-button {
+  height: 40px;
+  width: 80px;
+  margin-left: 17px;
+  background-image: var(--nav-img);
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor:pointer;
+}
+
+/* Logs */
+.cbwf-widget.cbwf-popover.placement-window-visible-top.cbwf-modal {
+  z-index: 999999;
+  margin-left: 248px;
+  width: calc(100% - 270px);
+  left:0px !important;
+  top:65px !important;
+  height: calc(100vh - 80px) !important;
+}
+.cbwf-stage-logs .log-details .console-output {
+  background-color: var(--panel-color);
+}
+.cbwf-stage-logs-dialog .body {
+  background-color: var(--panel-color);
+}
+#pipeline-box .table-box .cell-color {
+  background: none !important;
+}
+.stage-wrapper .duration {
+  border-radius: 0px !important;
+}
+
+/* Pipelines */
+td.stage-cell {
+  cursor: pointer;
+}
+td.stage-cell.NOT_EXECUTED {
+  cursor: initial;
+}
+#pipeline-box .SUCCESS, #pipeline-box .UNSTABLE{
+  background:none;
+}
+td.stage-cell .stage-wrapper {
+  border-radius: 0px !important;
+}
+
+.duration span {
+  opacity:1 !important;
+  color: black;
+}
+
+#pipeline-box .table-box .table-viewPort .stage-wrapper {
+  border:1px solid rgba(0, 0, 0, 0) !important;
+}
+
+.SUCCESS,td.stage-cell.SUCCESS .stage-wrapper  {
+  background-color: var(--green-color);
+}
+.UNSTABLE,td.stage-cell.UNSTABLE .stage-wrapper  {
+  background-color: var(--yellow-color);
+}
+.FAILED {
+  background-color: var(--red-color) !important;
+}
+.NOT_EXECUTED {
+  background-color: var(--panel-color) !important;
+}
+.FAILED .node-name {
+  background-color: var(--red-color) !important;
+}
+
+th[class^='stage-header-name-'] {
+  background-color: var(--uib-color);
+  color: white;
+}
+
+#pipeline-box .table-box .table-viewPort {
+  box-shadow: var(--box-shadow) !important;
+  border: none !important;
+}
+
+span.badge {
+  background-color: var(--uib-color) !important;
+}
+
+.stage-start-time {
+  background-color: var(--panel-color) !important;
+  border: none !important;
+}
+
+.changeset-box {
+  box-shadow: none !important;
+}
+.changeset-box, .run-changeset {
+  border-radius: 0px !important;
+}
+
+/* Alert pipeline */
+.alert.cbwf-info-action-popover {
+  border-radius: 0px !important;
+}
+.cbwf-popover .alert {
+  text-shadow: none !important;
+  box-shadow: var(--box-shadow) !important;
+}
+.cbwf-widget .alert-success {
+  background-color: var(--green-color) !important;
+  border-color:  var(--dark-green-color) !important;
+}
+.cbwf-widget .alert-warning {
+  background-color: var(--yellow-color) !important;
+  border-color:  var(--dark-yellow-color) !important;
+}
+.stage-actions-popover .alert-success.cbwf-info-action-popover:before {
+  border-right: 8px solid var(--dark-green-color) !important;
+  border-top: 8px solid var(--dark-green-color) !important;
+}
+.stage-actions-popover .alert-warning.cbwf-info-action-popover:before {
+  border-right: 8px solid var(--dark-yellow-color) !important;
+  border-top: 8px solid var(--dark-yellow-color) !important;
+}
+
+#pipeline-box .table-box {
+  padding: 0 0 0 170px !important;
+}
+tbody.totals-box {
+  display: none !important;
+}
+.jobsTable .stage-cell .stage-wrapper .duration {
+  box-shadow: none !important;
+}
+.duration span {
+  font-size: 12px !important;
+}
+
+.progress {
+  border-radius: 0px !important;
+}
+.progress-bar.progress-bar-striped:not([role]) {
+  background-image: url(img/building.gif) !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+  width: 100% !important;
+}
+.progress-bar.progress-bar-striped[role] {
+  width: 40px !important;
+  animation-name: loadingbar !important;
+  animation-duration: 2.75s !important;
+  animation-iteration-count: infinite !important;
+  position: relative !important;
+  border-radius: 60px !important;
+  background: var(--uib-color) !important;
+}
+
+#pipeline-box .table-box .table-viewPort .stage-wrapper {
+  border: none !important;
+}
+
+#pipeline-box .table-box tr td.totalComplete .progress {
+  margin: 0 0 1px 1px !important;
+  box-shadow: none !important;
+}
+
+/* buttons */
+.yui-button {
+  box-shadow: var(--box-shadow);
+}
+button#yui-gen3-button {
+  background-color: var(--uib-color) !important;
+  border-radius: 0px !important;
+  border: none !important;
+}
+.yui-ac-content {
+  border-radius: 0px !important;
+  margin-top: 6px;
+  background-color: var(--header-color) !important;
+  box-shadow: var(--box-shadow) !important;
+}
+.yui-ac-bd li {
+  cursor: pointer;
+}
+
+@keyframes loadingbar {
+  0%   {left:0px;}
+  25%  {left:8%;}
+  50%  {left:50%;}
+  75%  {left:92%;}
+  100% {left:100%;}
+}
+
+/* jacoco state */
+td[tooltip^="Percentage"] a {
+  background-image: url(img/state.png);
+  padding-left: 24px;
+  background-size: 16px;
+  background-repeat: no-repeat;
+}
+td[tooltip^="Percentage"][data^="3"] a,
+td[tooltip^="Percentage"][data^="4"] a {
+  background-image: url(img/state_orange.png);
+}
+td[tooltip^="Percentage"][data^="5"] a,
+td[tooltip^="Percentage"][data^="60."] a,
+td[tooltip^="Percentage"][data^="61."] a,
+td[tooltip^="Percentage"][data^="62."] a,
+td[tooltip^="Percentage"][data^="63."] a,
+td[tooltip^="Percentage"][data^="64."] a {
+  background-image: url(img/state_lightorange.png);
+}
+td[tooltip^="Percentage"][data^="65."] a,
+td[tooltip^="Percentage"][data^="66."] a,
+td[tooltip^="Percentage"][data^="67."] a,
+td[tooltip^="Percentage"][data^="68."] a,
+td[tooltip^="Percentage"][data^="69."] a,
+td[tooltip^="Percentage"][data^="7"] a {
+  background-image: url(img/state_lightgreen.png);
+}
+td[tooltip^="Percentage"][data^="8"] a,
+td[tooltip^="Percentage"][data^="9"] a {
+  background-image: url(img/state_green.png);
+}
+td[tooltip^="Percentage"][data^="1."] a,
+td[tooltip^="Percentage"][data^="2."] a,
+td[tooltip^="Percentage"][data^="3."] a,
+td[tooltip^="Percentage"][data^="4."] a,
+td[tooltip^="Percentage"][data^="5."] a,
+td[tooltip^="Percentage"][data^="6."] a,
+td[tooltip^="Percentage"][data^="7."] a,
+td[tooltip^="Percentage"][data^="8."] a,
+td[tooltip^="Percentage"][data^="9."] a, 
+td[tooltip^="Percentage"][data^="1"] a,  
+td[tooltip^="Percentage"][data^="2"] a {
+  background-image: url(img/state_red.png);
+}
+td[tooltip^="Percentage"][data^="100"] a {
+  background-image: url(img/state_green.png);
+}
+td[tooltip^="Percentage"][data^="0."] a {
+  background-image: url(img/state_disabled.png);
+}
+/*
+sepia(10%) hue-rotate(300deg) saturate(400%); ORANGE
+filter: sepia(10%) hue-rotate(300deg) saturate(900%); DARK ORANGE
+sepia(10%) hue-rotate(300deg) saturate(2000%); RED
+
+0 PURPLE
+1 - 30 RED
+31 - 50 ORANGE
+51 - 65 YELLOW
+66 - 80 LIGHT GREEN
+76 - 90 GREEN
+91 < SUPER GREEN
+*/
