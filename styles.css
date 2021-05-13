@@ -523,8 +523,7 @@ img[src$="blue_anime.gif"] {
   background-size: 16px;
   background-repeat: no-repeat;
   padding-left: 32px;
-  background-image:url(img/circle.png);
-  animation: rotation 2s infinite linear;
+  background-image:url(img/building);
 }
 .status_success, .status_unstable, .status_failed {
   margin-right: 9px;
