@@ -611,12 +611,18 @@ td.stage-cell .stage-wrapper {
 #pipeline-box .table-box .table-viewPort .stage-wrapper {
   border:1px solid rgba(0, 0, 0, 0) !important;
 }
-
+.cell-box {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
 .SUCCESS,td.stage-cell.SUCCESS .stage-wrapper  {
   background-color: var(--green-color);
 }
 .UNSTABLE,td.stage-cell.UNSTABLE .stage-wrapper  {
   background-color: var(--yellow-color);
+}
+td.stage-cell.ABORTED .stage-wrapper  {
+  background-color: var(--disabled-color);
 }
 .FAILED {
   background-color: var(--red-color) !important;
