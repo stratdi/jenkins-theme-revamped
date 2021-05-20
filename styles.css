@@ -53,6 +53,9 @@
 html {
   overflow: hidden;
 }
+*:focus {
+  outline: none !important;
+}
 a.model-link {
   color: var(--link-color) !important;
 }
@@ -62,8 +65,12 @@ a:link {
 .setting-input {
   border-radius: 0px !important;
   box-shadow: none !important;
+  border: 0px !important;
+  border-bottom: 1px solid var(--uib-color) !important;
 }
-
+form[action^="build"] tbody:hover {
+  background: transparent !important;
+}
 #side-panel {
   height: calc(100vh - 56px);
   overflow-y:hidden;
@@ -125,16 +132,7 @@ footer * {
   background-size: 200px;
   background-repeat: no-repeat;
   padding-left: 240px;
-
   margin: 0px !important;
-
-
-
- /* background-image: url(jenkins.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  border: 1px solid #000;*/
 }
 
 /* Afegit menu */
@@ -193,17 +191,10 @@ div#nav-button img {
   width: var(--nav-weight) !important;
   z-index: 999999;
 
-  /*margin-top: -96px !important;*/
   margin-top: -40px !important;
   padding-top: 0px;
   padding-left: var(--scrollbar-size);
   
-  /*background-image: url('https://einesdes.uib.es/jenkins/userContent/jenkins-theme-revamped/img/jenkins_barra.png');
-  background-size: 200px;
-  background-repeat: no-repeat;
-  background-position: top;
-  background-position-y: 10px;
-  */
   background-color:var(--nav-color);
 
   transition:width 0.3s ease-in-out;
@@ -231,9 +222,6 @@ div#nav-button img {
   border-radius:0px;
   overflow-y:auto;
 }
-.dashboard table {
-  /*table-layout: fixed;*/
-}
 
 /* Footer */
 #htmlAudioNotifierPanel {
@@ -256,9 +244,6 @@ div#nav-button img {
 }
 
 /* Taules */
-table {
-  /*table-layout: fixed;*/
-}
 .col-md-offset-2.col-md-20 {
   display: table;
   margin: 0;
@@ -803,16 +788,3 @@ td[tooltip^="Percentage"][data^="100"] a {
 td[tooltip^="Percentage"][data^="0."] a {
   background-image: url(img/state_disabled.png);
 }
-/*
-sepia(10%) hue-rotate(300deg) saturate(400%); ORANGE
-filter: sepia(10%) hue-rotate(300deg) saturate(900%); DARK ORANGE
-sepia(10%) hue-rotate(300deg) saturate(2000%); RED
-
-0 PURPLE
-1 - 30 RED
-31 - 50 ORANGE
-51 - 65 YELLOW
-66 - 80 LIGHT GREEN
-76 - 90 GREEN
-91 < SUPER GREEN
-*/
