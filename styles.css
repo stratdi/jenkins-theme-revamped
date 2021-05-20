@@ -67,6 +67,17 @@ a:link {
   box-shadow: none !important;
   border: 0px !important;
   border-bottom: 1px solid var(--uib-color) !important;
+  background: var(--main-color) !important;
+}
+select {
+  background: var(--main-color) !important;
+  border: 0px !important;
+  border-bottom: 1px solid var(--uib-color) !important;
+  height: 29px !important;
+  cursor: pointer !important;
+}
+option[selected] {
+  background-color: var(--uib-color) !important;
 }
 form[action^="build"] tbody:hover {
   background: transparent !important;
